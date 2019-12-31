@@ -2,14 +2,15 @@
 def reverse(h):
     curr = t = h
     p = None
-    
+
     while curr:
         t = t.next
         curr.next = p
         p = curr
         curr = t
-        
-    return p        
+
+    return p
+
 
 # Singly-linked lists are already defined with this interface:
 # class ListNode(object):
@@ -18,17 +19,17 @@ def reverse(h):
 #     self.next = None
 #
 def isListPalindrome(l):
-    s = f = l
+    s = f = ll
     while f and f.next:
         s = s.next
         f = f.next.next
-        
+
     r = reverse(s)
-    
+
     while r:
-        if (r.value != l.value):
+        if (r.value != ll.value):
             return False
         r = r.next
-        l = l.next
-    
+        ll = ll.next
+
     return True
