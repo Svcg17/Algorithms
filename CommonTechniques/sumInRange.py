@@ -5,10 +5,8 @@
         @queries: 2d array of integers containing a pair of indexes
     Return: An integer of the sums modulo 10^9 + 7
 """
-
-
-def sumInRange(nums, queries):
-    newDict = {}
+"""
+newDict = {}
     init = nums[0]
     total = 0
     newDict[0] = nums[0]
@@ -21,3 +19,17 @@ def sumInRange(nums, queries):
         else:
             total = total + newDict[q[1]]
     return (total % 1000000007)
+"""
+
+
+def sumInRange(nums, queries):
+    newList = [0] * (len(nums) + 1)
+    total = 0
+
+    for i in range(len(nums)):
+        newList[i + 1] += newList[i] + nums[i]
+
+    for q in queries:
+        total += newList[q[1] + 1] - newList[q[0]]
+
+    return total % 1000000007
