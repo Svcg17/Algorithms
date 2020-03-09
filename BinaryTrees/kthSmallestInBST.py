@@ -22,7 +22,6 @@ def kthSmallestInBST(t, k):
     while(current is not None):
         # a node that can be threaded has been reached, print
         if current.left is None:
-            print(current.value)
             counter += 1
             if counter == k:
                 return current.value
@@ -40,7 +39,6 @@ def kthSmallestInBST(t, k):
             # Otherwise, the node is threaded, print and fix it back
             else:
                 pre.right = None
-                print(current.value)
                 counter += 1
                 if counter == k:
                     return current.value
