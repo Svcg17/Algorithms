@@ -1,3 +1,5 @@
+from TreeSetup import TreeNode, toBinaryTree, printTree
+
 """
 Kth Smallest Element in a BST
 Given a binary search tree, write a function kthSmallest to find the kth
@@ -56,3 +58,9 @@ class Solution:
             root = root.right
 
 
+# main
+tree = toBinaryTree([3, 1, 4, None, 2])
+printTree(tree)
+sol = Solution()
+smallest = sol.kthSmallestIterative(tree, 1)
+print(smallest)
