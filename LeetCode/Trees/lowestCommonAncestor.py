@@ -1,9 +1,19 @@
 from TreeSetup import TreeNode, toBinaryTree, printTree
+"""lowest common ancestor solution of a binary tree solution"""
 
 
 class Solution:
+    """Solution class"""
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode',
                              q: 'TreeNode') -> 'TreeNode':
+        """finds the lowest common ancestor shared by q and p nodes
+        Args:
+            root: root node type TreeNode
+            p: TreeNode to search
+            q: TreeNode to search
+        Return:
+            A TreeNode representing the LCA of q and p
+        """
         if not root:
             return None
         if root.val == p.val or root.val == q.val:
